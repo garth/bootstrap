@@ -1,0 +1,59 @@
+//
+// Patches: Grid system
+// --------------------------------------------------
+
+
+// FMake container for small devices always fluid
+.container {
+  @media (max-width: @screen-md-max) {
+    width: 100%;
+  }
+}
+
+
+//
+// Add-ons: Grid system
+// --------------------------------------------------
+
+// Vertical column gutter
+.row-gutter {
+	margin-bottom: (@grid-gutter-width * -1);
+	> [class^="col-"] {
+		margin-bottom: @grid-gutter-width;
+	}
+	& + & {
+		margin-top: @grid-gutter-width;
+	}
+}
+
+
+// Fixed width column layouts
+//---------------------------
+
+@media (min-width: @screen-desktop) {
+	.col-left-fixed {
+		> .col-left {
+			position: absolute;
+			z-index: 1;
+	    width: (240px + @grid-gutter-width);
+		}
+		> .col-main {
+			padding-left: (240px + @grid-gutter-width + (@grid-gutter-width / 2));
+			width: 100%;
+		}
+	}
+	.col-right-fixed {
+		position: relative;
+		> .col-right {
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+	    width: (240px + @grid-gutter-width);
+		}
+		> .col-main {
+			padding-right: (240px + @grid-gutter-width + (@grid-gutter-width / 2));
+			width: 100%;
+		}
+	}
+}

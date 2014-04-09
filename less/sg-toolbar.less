@@ -1,0 +1,117 @@
+//
+// Toolbar
+// --------------------------------------------------
+
+.toolbar {
+	&:extend(.clearfix all);
+	margin-bottom: (@line-height-computed / 2);
+	
+	> ul {
+		&:extend(.list-unstyled);
+		margin-bottom: 0;
+		
+		> li {
+			float: left;
+			margin-right: 15px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+			label {
+				font-weight: normal;
+				margin-top: (@padding-base-vertical + 1);
+				margin-bottom: 0;
+				display: inline-block;
+				vertical-align: top;
+			}
+			.form-group {
+				padding: 0;
+				display: inline-block;
+				vertical-align: top;
+			}
+			.btn-group {
+				vertical-align: top;
+			}
+			.pagination, 
+			.pager {
+				margin: 0;
+				> li > a {
+			    color: @component-color;
+
+			    &:hover, 
+			    &:focus {
+			    	color: @component-hover-color;
+			    	background: @bg-dark;
+			    }
+			    &:active {
+			    	.box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+			    }
+		    }
+			}
+			.pagination {
+				float: left; // get rid of extra bottom spacing due to inline-block
+				> li > a, 
+				> li > span {
+					padding-top: (@padding-base-vertical - 2);
+					padding-bottom: (@padding-base-vertical - 2);
+				}
+				> .active > a,
+			  > .active > span {
+			    &,
+			    &:hover,
+			    &:focus {
+			    	color: @component-active-color-light;
+			      background-color: #fff;
+			      border-color: @pagination-border;
+			    }
+			  }
+			  > .disabled {
+			    > span,
+			    > span:hover, 
+			    > a,
+			    > a:hover,
+			    > a:focus {
+			      color: @component-disabled-color;
+			    }
+				}
+			}  
+		}
+	}
+}
+
+@media (min-width: @screen-md) {
+	.toolbar {
+		> ul {
+			float: left;
+		}
+		> ul.toolbar-right {
+			float: right;
+		}
+		> ul + ul {
+			margin-left: 15px;
+		}
+	}
+}
+
+@media (max-width: @screen-sm-max) {
+	.toolbar {
+		> ul {
+			&:extend(.clearfix all);
+			float: none;
+			
+			> li {
+				margin-bottom: 10px;
+			}
+			&.toolbar-right {
+				> li > .btn-group > .dropdown-menu-right {
+					right: auto;
+					left: 0;
+				}
+			}
+		}
+		> ul + ul {
+			border-top: 1px solid @border-color;
+			padding-top: 10px;
+		}
+	}
+}

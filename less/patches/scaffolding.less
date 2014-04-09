@@ -1,0 +1,39 @@
+//
+// Patches: Scaffolding
+// --------------------------------------------------
+
+// Add some transition to links
+a {
+	.transition(color @transition-duration @transition-easing, background-color @transition-duration @transition-easing, border-color @transition-duration @transition-easing;);
+
+	&:hover, 
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+// Make images responsive by default
+img {
+  .img-responsive();
+}
+
+// Rounded corners
+.img-rounded {
+  border-radius: @border-radius-base;
+}
+
+
+//
+// Add-ons: Scaffolding
+// --------------------------------------------------
+
+
+// .no-touch .main {
+// 	min-height: 300px;
+// }
+
+@media (min-width: @grid-float-breakpoint) {
+  .main {
+		min-height: 300px;
+	}
+}

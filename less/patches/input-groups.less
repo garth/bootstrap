@@ -1,0 +1,70 @@
+//
+// Patches: Input groups
+// --------------------------------------------------
+
+// Text input groups
+// -------------------------
+.input-group-addon {
+  padding-right: 0;
+  padding-left: (@padding-base-horizontal - 4);
+  border-right-width: 0;
+  .box-shadow(inset 0 1px 0 rgba(0,0,0,.075));
+  
+  // Sizing
+  .input-group-sm & {
+    padding-right: 0;
+    padding-left: @padding-small-horizontal;
+  }
+  .input-group-lg & {
+    padding-right: 0;
+    padding-left: (@padding-large-horizontal - 4);
+  }
+  + .form-control {
+    border-left: 0;
+  }
+  // Avoid clipping of controls
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 1px;
+  }
+}
+
+// Disable left/right borders depending on position of addon
+.input-group-btn + .form-control {
+  border-left: 0;
+}
+.form-control + .input-group-addon {
+  border-right-width: 1px;
+  border-left-width: 0;
+  padding-left: 0;
+  padding-right: (@padding-base-horizontal - 4);
+}
+.input-group-sm .form-control + .input-group-addon {
+  padding-left: 0;
+  padding-right: @padding-small-horizontal;
+}
+.input-group-lg .form-control + .input-group-addon  {
+  padding-left: 0;
+  padding-right: (@padding-large-horizontal - 4);
+}
+.input-group .form-control:first-child,
+.input-group .form-control:nth-last-child(2) {
+  border-right: 0;
+}
+
+// Re-add form control side border due to 
+// our borderless form add-ons
+.input-group-addon:first-child {
+  border-right-width: 1px;
+}
+.input-group-addon:last-child {
+  border-left-width: 1px;
+}
+
+// Button input groups
+// -------------------------
+.input-group-btn > .btn {
+  + .btn {
+    margin-left: -4px;
+  }
+}

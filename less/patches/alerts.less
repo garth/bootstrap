@@ -1,0 +1,51 @@
+//
+// Patches: Alerts
+// --------------------------------------------------
+
+.alert {
+  // Headings for larger alerts
+  h3, h4 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  > p + p {
+    margin-top: 10px;
+  }
+  .alert-link,
+  a:not(.btn) {
+    text-decoration: underline;
+    font-weight: inherit;
+  }
+}
+.alert-info {
+  .close,
+  .alert-link,
+  a:not(.btn) {
+    color: @alert-info-text;
+  }
+}
+.alert-warning {
+  .close,
+  .alert-link,
+  a:not(.btn) {
+    color: @alert-warning-text;
+  }
+}
+.alert-danger {
+  .close,
+  .alert-link,
+  a:not(.btn) {
+    color: @alert-danger-text;
+  }
+}
+.alert-success {
+  .close,
+  .alert-link,
+  a:not(.btn) {
+    color: @alert-success-text;
+  }
+}
+
+.alert + .alert {
+  margin-top: (@line-height-computed / -2);
+}

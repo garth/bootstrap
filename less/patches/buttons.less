@@ -1,0 +1,121 @@
+//
+// Patches: Buttons
+// --------------------------------------------------
+
+// Add some transition effects
+// -------------------------
+.btn {
+  .transition(background-color @transition-duration @transition-easing, border-color @transition-duration @transition-easing, color @transition-duration @transition-easing;);
+
+  &:active,
+  &.active {
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.25));
+  }
+}
+
+
+// Don't underline btn links on hover
+// -------------------------
+
+.btn-link {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+
+//
+// Add-ons: Buttons
+// --------------------------------------------------
+
+
+// Stretched buttons
+// -------------------------
+.btn-stretched {
+  padding-left: (@padding-base-horizontal * 2);
+  padding-right: (@padding-base-horizontal * 2);
+  
+  .btn-lg&  {
+    padding-left: (@padding-large-horizontal * 2);
+    padding-right: (@padding-large-horizontal * 2);
+  }
+  .btn-sm& {
+    padding-left: (@padding-small-horizontal * 2);
+    padding-right: (@padding-small-horizontal * 2);
+  }
+  .btn-xs& {
+    padding-left: (5px * 2);
+    padding-right: (5px * 2);
+  }
+}
+
+
+// Hover buttons
+// -------------------------
+.btn-hover {
+  color: @btn-default-color;
+  background-color: transparent;
+  border-color: transparent;
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: transparent;
+      border-color: transparent;
+      color: @btn-default-color !important;
+      .opacity(.5);
+    }
+  }
+  &.btn-primary {
+    &:extend(.text-primary);
+  }
+  &.btn-warning {
+    &:extend(.text-warning);
+  }
+  &.btn-danger {
+    &:extend(.text-danger);
+  }
+  &.btn-success {
+    &:extend(.text-success);
+  }
+  &.btn-info {
+   &:extend(.text-info);
+  }
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+  .btn& {
+    &:hover,
+    &:focus {
+    color: @btn-default-color;
+    }
+  }
+  .btn-primary&, 
+  .btn-warning&, 
+  .btn-danger&, 
+  .btn-success&, 
+  .btn-info& {
+    &:hover,
+    &:focus {
+    color: #fff;
+    }
+  }
+}
+
+// Button bar 
+// -------------------------
+.btn-bar {
+  margin-top: @line-height-computed;
+  border-top: 1px solid @border-color;
+  padding: @padding-large-vertical 0;
+  text-align: right;
+}
+.btn-bar-left {
+  float: left;
+}

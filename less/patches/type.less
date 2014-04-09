@@ -1,0 +1,194 @@
+//
+// Patches: Typography
+// --------------------------------------------------
+
+// Headings
+// -------------------------
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+}
+
+// h4, .h4,
+// h5, .h5,
+// h6, .h6 {
+//   margin-top: @line-height-computed;
+// }
+// h3, .h3, 
+// h4, .h4, 
+// h5, .h5, 
+// h6, .h6  {
+//   font-weight: @font-weight-semi-bold;
+// }
+
+
+// Description list
+// -------------------------
+
+dd {
+  margin-bottom: @line-height-computed / 2;
+
+  & :last-child, 
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+// Body text
+// -------------------------
+
+// .lead {
+//   font-weight: @font-weight-light;
+// }
+
+
+// Lists
+// -------------------------
+
+// Inline turns list items into inline-block
+.list-inline {
+  margin-left: -10px;
+  margin-right: -10px;
+
+  > li {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+// Emphasis & misc
+// -------------------------
+
+// Contextual colors
+.text-primary {
+  a&, 
+  & a {
+    color: @brand-primary-color;
+    text-decoration: underline;
+  }
+}
+.text-success {
+  a&, 
+  & a {
+    color: @brand-success-color;
+    text-decoration: underline;
+  }
+}
+.text-info {
+  a&, 
+  & a {
+    color: @brand-info-color;
+    text-decoration: underline;
+  }
+}
+.text-warning {
+  a&, 
+  & a {
+    color: @brand-warning-color;
+    text-decoration: underline;
+  }
+}
+.text-danger {
+  a&, 
+  & a {
+    color: @brand-danger-color;
+    text-decoration: underline;
+  }
+}
+
+// Contextual backgrounds
+.bg-success {
+  .bg-variant(@alert-success-bg);
+}
+.bg-info {
+  .bg-variant(@alert-info-bg);
+}
+.bg-warning {
+  .bg-variant(@alert-warning-bg);
+}
+.bg-danger {
+  .bg-variant(@alert-danger-bg);
+}
+
+
+// Page header
+// -------------------------
+.page-header {
+  &:first-child {
+    margin-top: 0 !important;
+  }
+  h1 {
+    font-size: 36px;
+  }
+}
+
+
+//
+// Add-ons: Type
+// --------------------------------------------------
+
+
+// Small print
+// -------------------------
+.small-print {
+  font-size: @small-print-font-size;
+  color: @small-print-color;
+  
+  a {
+    color: @small-print-color;
+    text-decoration: underline;
+    &:hover {
+      color: @small-print-hover-color;
+    }
+  }
+}
+
+
+// Lists
+// -------------------------
+
+// Inline turns list items into inline-block
+.list-inline-block {
+  .list-unstyled();
+  //margin: 10px -10px (@line-height-computed);
+  margin-left: -10px;
+  margin-right: -10px;
+
+  > li {
+    display: inline-block;
+    margin: 0 -5px 0 0;
+    padding: 0 10px 10px;
+    width: 100%;
+    vertical-align: top;
+
+    label {
+      margin: 0;
+    }
+    @media (min-width: @grid-float-breakpoint) {
+      width: 33.33333%;
+    }
+    @media (min-width: @screen-md-min) {
+      width: 20%;
+    }
+  }
+  // Compensate checkbox and radio negative margin
+  .checkbox, 
+  .radio {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    min-height: 0 none;
+
+    label {
+      display: block;
+      padding: 5px 10px 5px 30px;
+    }
+  }
+  .checkbox + .checkbox, 
+  .radio + .radio {
+    margin-top: 0;
+  }
+}

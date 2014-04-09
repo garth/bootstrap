@@ -1,0 +1,32 @@
+//
+// Patches: Pagination (multiple pages)
+// --------------------------------------------------
+
+// Base 
+.pagination {
+  
+  [class^="glyphicon-"] {
+    top: 2px;
+  }
+
+  > li {
+    > a,
+    > span {
+      border-right: 0;
+      border-left: 0;
+      margin-left: 0;
+    }
+    &:first-child {
+      > a,
+      > span {
+        border-left: 1px solid @pagination-border;
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        border-right: 1px solid @pagination-border;
+      }
+    }
+  }
+}

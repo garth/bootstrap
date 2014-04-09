@@ -1,0 +1,114 @@
+//
+// Patches: Tables
+// --------------------------------------------------
+
+// Baseline styles
+
+.table {
+  // Only last table heading row with thick bottom border
+  > thead:last-child > tr:last-child > th {
+    border-bottom-width: 2px;
+  }
+}
+
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  > tbody > tr:hover {
+    // Show invisible objects
+    .invisible {
+      visibility: visible;
+    }
+  }
+}
+
+// Always show invisible objects on touch devices
+.touch .table-hover > tbody > tr .invisible {
+  visibility: visible !important;
+}
+
+// Use slightly darker background color for hovering
+// of striped tables
+.table-striped.table-hover {
+  > tbody {
+    > tr:hover {
+      > td,
+      > th {
+        background-color: @table-bg-active;
+      }
+    }
+  }
+}
+
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+// Generate the contextual variants
+//.table-row-variant(active; @table-bg-active);
+.table-row-variant(success; @brand-success-bg-light);
+.table-row-variant(info; @brand-info-bg-light);
+.table-row-variant(warning; @brand-warning-bg-light);
+.table-row-variant(danger; @brand-danger-bg-light);
+
+
+// Responsive tables
+
+@media (max-width: @screen-xs-max) {
+  .table-responsive {
+    margin-bottom: @line-height-computed;
+  }
+}
+
+
+//
+// Add-ons: Tables
+// --------------------------------------------------
+
+// Table caption
+// -------------------------------
+
+.table {
+  caption {
+    font-size: @table-caption-font-size;
+    font-weight: @font-weight-semi-bold;
+    border-bottom: 1px solid @table-caption-border-color;
+    padding-bottom: @table-cell-padding;
+    text-align: left;
+    color: @table-caption-color;
+  }
+  &.table-small caption {
+    font-size: ceil((@table-caption-font-size * 0.9));
+  }
+} 
+
+
+// Table small text
+// -------------------------------
+
+.table-small {
+  thead,
+  tbody,
+  tfoot {
+    > tr {
+      > th,
+      > td {
+        font-size: @table-small-font-size; 
+      }
+    }
+  }
+}
+
+// Table row link
+// -------------------------------
+
+.table-row-link {
+  tbody > tr:hover {
+    cursor: pointer;
+  }
+}

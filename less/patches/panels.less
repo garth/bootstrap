@@ -1,0 +1,58 @@
+//
+// Patches: Panels
+// --------------------------------------------------
+
+// Remove last child's bottom margin
+.panel-heading,
+.panel-body, 
+.panel-footer  {
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.panel {
+  // Apply left panel padding to first column's table cells
+  > .table, 
+  > .responsive .table, 
+  .panel-header + .table,
+  .panel-header + .responsive > .table {
+    > thead,
+    > tbody, 
+    > tfoot {
+      > tr {
+        > th:first-child,
+        > td:first-child {
+          padding-left: @panel-body-padding;
+        }
+      }
+    }
+  }
+}
+
+.panel-title {
+  padding-top: 0;
+}
+
+// Collapsable panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+.panel-group {
+
+  .panel-heading {
+    .panel-title {
+      > a:first-child {
+        display: block;
+        text-decoration: none !important;
+        outline: 0 !important;
+        padding: @panel-heading-padding;
+        margin: -10px -15px;
+        border-radius: (@border-radius-base - 1);
+      }
+    }
+  }
+}
+

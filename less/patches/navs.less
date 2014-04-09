@@ -1,0 +1,22 @@
+//
+// Patches: Navs
+// --------------------------------------------------
+
+
+.nav {
+
+  // Open dropdowns
+  .open > a {
+    &,
+    &:hover,
+    &:focus {
+      border-color: @nav-tabs-active-link-hover-border-color;
+    }
+  }
+
+}
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  margin-top: 18px;
+}

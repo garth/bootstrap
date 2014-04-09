@@ -1,0 +1,120 @@
+//
+// Patches: Forms
+// --------------------------------------------------
+
+
+// Normalize non-controls
+//
+fieldset {
+  margin-bottom: @line-height-computed;
+}
+
+legend {
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-size: 18px; // (@font-size-base * 1.5);
+  font-weight: @font-weight-semi-bold;
+}
+label {
+  font-weight: @font-weight-semi-bold;
+}
+
+// Common form controls
+//
+.form-control {
+  textarea& {
+    resize: none;
+    word-wrap: break-word;
+    vertical-align: top;
+  }
+}
+
+// Form group
+// 
+.form-group {
+  margin-bottom: 0;
+  padding: 7px 0;
+
+  > div input[type="file"] {
+    margin-top: 5px;
+  }
+  &.active {
+    background-color: @form-group-focus-bg;
+    .transition(background-color @transition-duration);
+  }
+}
+
+// Horizontal forms
+//
+.form-horizontal {
+  .control-label {
+    padding-bottom: 2px;
+  }
+  @media (min-width: @screen-sm-min) {
+    .control-label {
+      text-align: left;
+    }
+  }
+}
+
+// Inline forms
+//
+.form-inline {
+  @media (min-width: @screen-sm-min) {
+    .form-group {
+      padding: 0;
+    }
+  }
+}
+
+
+// Help text
+// 
+.help-block {
+  font-size: @font-size-small;
+  color: @form-help-block-color; 
+  font-weight: @font-weight-normal;
+  margin-bottom: 5px;
+  line-height: @line-height-mini;
+}
+
+//
+// Add-ons: Forms
+// --------------------------------------------------
+
+
+// JS placeholder vor ie<10
+//
+//input, textarea { color: @input-color; }
+.placeholder { 
+  color: @input-color-placeholder; // IE<10 JS placeholder
+}
+
+// Required fields
+// 
+label i,
+label em,
+.required {
+  color: @input-color-required;
+  font-style: normal;
+}
+p.required {
+  font-size: @font-size-small;
+}
+
+// Add-on: Fixed width controls
+// -------------------------
+@media (min-width: @grid-float-breakpoint) {
+  .fc-xxs { width: 60px; }
+  .fc-xs { width: 100px; }
+  .fc-sm { width: 160px; } 
+  .fc-md { width: 240px; } 
+  .fc-lg { width: 380px; }
+  .fc-xl { width: 560px; } 
+}
+// @media (max-width: @screen-sm) {
+//   .fc-xl, 
+//   .fc-lg { 
+//     width: 100%; 
+//   }
+// }

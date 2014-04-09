@@ -1,0 +1,101 @@
+//
+// Add-ons: Button groups
+// --------------------------------------------------
+
+// Button caret color
+// ----------------------
+
+.caret {
+  .btn & {
+    border-top-color: #fff;
+  }
+  .btn-default & {
+    border-top-color: @btn-default-color;
+  }
+}
+.btn-primary {
+  &.btn-hover .caret {
+    border-top-color: @brand-primary-border-color;
+  }
+}
+.btn-success {
+  &.btn-hover .caret {
+    border-top-color: @brand-success-border-color;
+  }
+}
+.btn-warning {
+  &.btn-hover .caret {
+    border-top-color: @brand-warning-border-color;
+  }
+}
+.btn-danger {
+  &.btn-hover .caret {
+    border-top-color: @brand-danger-border-color;
+  }
+}
+.btn-info {
+  &.btn-hover .caret {
+    border-top-color: @brand-info-border-color;
+  }
+}
+
+.btn {
+  &.btn-hover:hover .caret, 
+  &.btn-hover:focus .caret {
+    border-top-color: #fff;
+  }
+}
+.btn-default {
+  &.btn-hover:hover .caret, 
+  &.btn-hover:focus .caret {
+    border-top-color: @btn-default-color;
+  }
+}
+
+.dropup {
+  & .btn .caret {
+    border-bottom-color: #fff;
+  }
+  & .btn-default .caret {
+    border-bottom-color: @btn-default-color;
+  }
+}
+.dropup .btn-primary {
+  &.btn-hover .caret {
+    border-bottom-color: @brand-primary-border-color;
+  }
+}
+.dropup .btn-success {
+  &.btn-hover .caret {
+    border-bottom-color: @brand-success-border-color;
+  }
+}
+.dropup .btn-warning {
+  &.btn-hover .caret {
+    border-bottom-color: @brand-warning-border-color;
+  }
+}
+.dropup .btn-danger {
+  &.btn-hover .caret {
+    border-bottom-color: @brand-danger-border-color;
+  }
+}
+.dropup .btn-info {
+  &.btn-hover .caret {
+    border-bottom-color: @brand-info-border-color;
+  }
+}
+
+.dropup .btn {
+  &.btn-hover:hover .caret, 
+  &.btn-hover:focus .caret {
+    border-bottom-color: #fff;
+  }
+}
+
+.dropup .btn-default {
+  &.btn-hover:hover .caret, 
+  &.btn-hover:focus .caret {
+    border-bottom-color: @btn-default-color;
+  }
+}

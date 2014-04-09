@@ -1,0 +1,40 @@
+//
+// Footer 
+// --------------------------------------------------
+
+.footer {
+	margin-top: 30px;
+	padding-top: 10px;
+	border-top: 1px solid @footer-border-color;
+	font-size: 13px;
+	color: @footer-color;
+	a {
+		color: @footer-link-color;
+		
+		&:hover {
+			color: @footer-link-hover-color;
+		}
+	}
+	.footer-copyright {
+		margin: 0;
+	}
+	.footer-links {
+		text-align: right;
+		a {
+			display: inline-block;
+			padding-left: 15px;
+			
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+	@media (max-width: @screen-xs-max) {
+		& {
+			.footer-copyright,
+			.footer-links {
+				text-align: center;
+			}
+		}
+	}
+}
